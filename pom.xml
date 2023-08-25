@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.nkk.hikvision</groupId>
     <artifactId>hikvision-spring-boot-starter</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2.0-dev-1</version>
     <name>hikvision-spring-boot-starter</name>
     <description>海康威视sdk包</description>
     <url>https://github.com/waimifeier/hikvision-spring-boot-starter</url>
