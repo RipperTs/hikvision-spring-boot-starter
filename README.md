@@ -157,3 +157,23 @@ public void flvSdkBack(HttpServletResponse response,HttpServletRequest request){
 
 效果展示: 
 ![img.png](img.png)
+
+## 常见问题
+- 在Linux下java调研libPlayCtrl.so文件失败
+    ```
+  Exception in thread "Thread-1" Exception in thread "Thread-5" Exception in thread "Thread-6" Exception in thread "Thread-4" Exception in thread "Thread-3" java.lang.UnsatisfiedLinkError: Unable to load library '/home/bjlthy/HCNetSDK/libPlayCtrl.so': libAudioRender.so: 无法打开共享对象文件: 没有那个文件或目录
+        at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:145)
+        at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:188)
+        at com.sun.jna.Library$Handler.<init>(Library.java:123)
+        at com.sun.jna.Native.loadLibrary(Native.java:255)
+        at com.sun.jna.Native.loadLibrary(Native.java:241)
+        at redis.PlayCtrl.<clinit>(HCNetSDK.java:3255)
+  ```
+  解决方案:
+    ```shell
+  sudo vim ~/.bashrc
+    末尾加入
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/bjlthy/HCNetSDK/
+    刷新一下
+    source ~/.bashrc
+  ```
