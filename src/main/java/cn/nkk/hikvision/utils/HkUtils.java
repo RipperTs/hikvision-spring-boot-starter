@@ -54,8 +54,8 @@ public final class HkUtils {
             String strPathCom = hiKProperties.getSdk_path();
 
             //这里是库的绝对路径，请根据实际情况修改，注意改路径必须有访问权限
-            String strPath1 = strPathCom + "/libcrypto.so";
-            String strPath2 = strPathCom + "/libssl.so";
+            String strPath1 = strPathCom + "/crypto.so";
+            String strPath2 = strPathCom + "/ssl.so";
 
             System.arraycopy(strPath1.getBytes(), 0, ptrByteArray1.byValue, 0, strPath1.length());
             ptrByteArray1.write();

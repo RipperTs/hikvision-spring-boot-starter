@@ -54,7 +54,7 @@ public class HikVisionAutoConfiguration {
                 //Linux系统加载库路径
                 else if (OsSelectUtil.isLinux()){
                     strDllPath = properties.getSdk_path().startsWith("classpath") ?
-                            ResourceUtils.getFile(properties.getSdk_path()+"/libhcnetsdk.so").getPath() : properties.getSdk_path()+"/libhcnetsdk.so";
+                            ResourceUtils.getFile(properties.getSdk_path()+"/hcnetsdk.so").getPath() : properties.getSdk_path()+"/hcnetsdk.so";
                 }
                 hCNetSDK = (HCNetSDK) Native.loadLibrary(strDllPath, HCNetSDK.class);
             } catch (Exception ex) {
@@ -81,7 +81,7 @@ public class HikVisionAutoConfiguration {
                 //Linux系统加载库路径
                 else if (OsSelectUtil.isLinux())
                     strPlayPath = properties.getSdk_path().startsWith("classpath") ?
-                            ResourceUtils.getFile(properties.getSdk_path()+"/libPlayCtrl.so").getPath() : properties.getSdk_path()+"/libPlayCtrl.so";
+                            ResourceUtils.getFile(properties.getSdk_path()+"/PlayCtrl.so").getPath() : properties.getSdk_path()+"/PlayCtrl.so";
                 playControl = (PlayCtrl) Native.loadLibrary(strPlayPath,PlayCtrl.class);
             } catch (Exception ex) {
                 log.error("加载playControl失败}");
